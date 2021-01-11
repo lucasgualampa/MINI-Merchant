@@ -1,54 +1,61 @@
 const config = require('../config/config');
 const server = require('express').Router();
 const axios = require('axios');
+const fetch = require("node-fetch");
 
-//const url = `https://api.mercadolibre.com/sites/MLA/search?q={query}`;
-
-//Razonamiento : 
-//➡️ Hacer la ruta 
-//➡️ llamar a la api con fetch o axios 
-//➡️ el dato lo guardo en un array de objetos(cache)
-//➡️ agrego una condición al comienzo de si se encuentra la propiedad en el array muestro el dato, sino hago el llamado a la api.
-
-// create an object so i dont have to call api twice for the same search
 var cache = {};
 
-server.get('/search', (req, res) => {
-    //req.params contains route parameters (in the path portion of the URL),
-    //and req.query contains the URL query parameters (after the ? in the URL).
-    let searchQuery = req.query.q;
+/* GET home page. */
+server.get("/", function (req, res, next) {
+  res.render("index", { title: "Express" });
+});
 
-    if (cache.hasOwnProperty(searchQuery)) {
-        return res.send(cache[searchQuery]);
-    } else {
-        axios.get(config.apiMercadoLibre + `/sites/MLA/search?q=${searchQuery}`)
-            .then(data => data.json())
-            .then(data => {
-                // Code for handling the response 
-                // the attribute .results is from the documentation of ML api
-                let products = data.results.map(product => {
-                    return {
-                        id: product.id,
-                        title: product.title,
-                        price: product.price,
-                        total_price: product.price,
-                        currency_id: product.currency_id,
-                        available_quantity: product.available_quantity,
-                        thumbnail: product.thumbnail,
-                        condition: product.condition,
-                    }
-                });
+server.get("/search", (req, res) => {
+  var { query, page, category } = req.query;
+  console.log(req.query)
 
-            cache[searchQuery] = products;
-            res.send(products);
+  !page && (page = 1);
+  if (cache[query] && cache[query][page]) {
+    console.log("entró al caché");
+    return res.json(cache[query][page]);
+  }
+  var offset = (page - 1) * 30;
 
-            })
-            .catch(error => {
-                // Code for handling the error 
-                console.log(error);
-                res.status(404).send("Error");
-            });
-    }
+  if(query){
+    fetch(
+      `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=30&offset=${offset}`
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        !cache[query] && (cache[query] = {});
+        cache[query][page] = json;
+        return res.json(json);
+      });
+
+ 
+  }
+
+  if(category){
+    fetch(`https://api.mercadolibre.com/sites/MLA/search?category=${category}`)
+    .then((res) => res.json())
+    .then((cat) => {
+      res.json(cat.results)
+    })
+  }
+
+});
+
+server.get('/categories', (req,res) => {
+  fetch(
+    `https://api.mercadolibre.com/sites/MLA/categories`
+  )
+  .then((cat) => cat.json())
+  .then((cat) => {res.json(cat)})
+})
+
+
+server.get("/test", (req, res) => {
+  res.json({ test: "OK" });
 });
 
 module.exports = server;

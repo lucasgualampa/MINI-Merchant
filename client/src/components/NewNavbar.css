@@ -1,0 +1,12 @@
+/* Modify the backgorund color */
+.navbar-custom { 
+    color: white;
+    background-color:firebrick; 
+    position: sticky;
+    
+} 
+/* Modify brand and text color */ 
+.navbar-custom .navbar-brand, 
+.navbar-custom .navbar-text { 
+    color:white; 
+} 
