@@ -9,10 +9,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import Categories from "../components/Categories";
 
 export default function Catalogue() {
-    var results = useSelector((state) => state.results);
+    var results = useSelector((state) => state.results); // saco dato de estado del store
     const dispatch = useDispatch();
     const location = useLocation();
-    var params = new URLSearchParams(location.pathname.slice(1));
+
+    var params = new URLSearchParams(location.pathname.slice(1)); // URL sirve para los parametros de busqueda
     var item = params.get("item");
     var condition = params.get("condition");
     var sort = params.get("sort");
