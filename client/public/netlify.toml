@@ -1,6 +1,5 @@
 [build]
  command = "npm start"
- publish = "/build"
  base = "/"
 
 [[redirects]]
