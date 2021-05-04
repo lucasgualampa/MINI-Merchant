@@ -13,9 +13,12 @@ Hago un Front-End y un Back-End que interactua con una API externa.
 ### Endpoints
 #### Swagger:
 > `http://localhost:3001/doc/`
-#### /api/search
 
 ![alt text](swaggerEndpoints.PNG)
+
+#### /api/search
+
+![alt text](postman.PNG)
 
 ## Front-End
 > Dispara request a la API(BACK-END) por medio de un formulario **controlado**
