@@ -7,10 +7,17 @@ var cache = {};
 
 /* GET home page. */
 server.get("/", function (req, res, next) {
+  // #swagger.ignore = true
   res.render("index", { title: "Express" });
 });
 
 server.get("/search", (req, res) => {
+  /*
+    #swagger.tags = ['search']
+    #swagger.summary = 'return a json of the object searched'
+    #swagger.description = 'Complete documentation of MELI API: https://api.mercadolibre.com/sites/MLA/search?q=iphone'
+  */
+
   var { query, page, category } = req.query;
   console.log(req.query)
 
@@ -29,9 +36,11 @@ server.get("/search", (req, res) => {
       .then((json) => {
         !cache[query] && (cache[query] = {});
         cache[query][page] = json;
-        return res.json(json);
+        return res.status(200).json(json);
+      })
+      .catch((err)=>{
+        return res.status(404).send(err);
       });
-
  
   }
 
@@ -39,13 +48,17 @@ server.get("/search", (req, res) => {
     fetch(`https://api.mercadolibre.com/sites/MLA/search?category=${category}`)
     .then((res) => res.json())
     .then((cat) => {
-      res.json(cat.results)
+      res.status(200).json(cat.results)
     })
+    .catch((err) =>{
+      res.status(404).send(err);
+    });
   }
 
 });
 
 server.get('/categories', (req,res) => {
+  // #swagger.ignore = true
   fetch(
     `https://api.mercadolibre.com/sites/MLA/categories`
   )
@@ -55,6 +68,7 @@ server.get('/categories', (req,res) => {
 
 
 server.get("/test", (req, res) => {
+  // #swagger.ignore = true
   res.json({ test: "OK" });
 });
 

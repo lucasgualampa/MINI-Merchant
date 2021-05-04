@@ -1,6 +1,9 @@
 const express = require("express");
 const server = express();
 const cors = require("cors");
+var bodyParser = require('body-parser');
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger_output.json');
 ////////////////
 // set routes //
 ////////////////
@@ -8,8 +11,10 @@ const routes = require('./src/routes/index');
 /////////////////////
 // set middlewares //
 /////////////////////
+server.use(bodyParser.json());
 server.use(cors());
 server.use('/', routes);
+server.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 ////////////////////////////
 // Error catching endware //
 ////////////////////////////
