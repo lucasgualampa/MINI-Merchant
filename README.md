@@ -12,7 +12,7 @@ Hago un Front-End y un Back-End que interactua con una API externa.
 
 ### Endpoints
 #### Swagger:
-> `http://localhost:3001/doc/`
+> `url: http://localhost:3001/doc/`
 
 ![alt text](swaggerEndpoints.PNG)
 
@@ -21,15 +21,16 @@ Hago un Front-End y un Back-End que interactua con una API externa.
 ![alt text](postman.PNG)
 
 ## Front-End
-> Dispara request a la API(BACK-END) por medio de un formulario **controlado**
+> url: `http://localhost:3000/`
 
+- Dispara request a la API(BACK-END) por medio de un formulario **controlado**.
 - Permite buscar producto.
 - Muestra un catalogo de lo buscado con sus atributos.
 - Filtrar por mayor precio, menor precio, nuevos y usados.
 - Limpiar el filtrado.
 - Paginado.
 
-![Alt Text]()
+![Alt Text](minimerchant.gif)
 
 ## Lenguaje
 - JavaScript
@@ -49,3 +50,4 @@ Hago un Front-End y un Back-End que interactua con una API externa.
 ## Instrucciones
 - npm install (en api y client)
 - npm run swagger-autogen en api y npm start en client
+- entrar a sus respectivas urls
