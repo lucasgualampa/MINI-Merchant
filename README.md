@@ -12,7 +12,7 @@ Hago un Front-End y un Back-End que interactua con una API externa.
 
 ### Endpoints
 #### Swagger:
-> `url: http://localhost:3001/doc/`
+> url: `http://localhost:3001/doc/`
 
 ![alt text](swaggerEndpoints.PNG)
 
