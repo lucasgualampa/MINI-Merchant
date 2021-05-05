@@ -1,5 +1,5 @@
 # MINI-Merchant <g-emoji class="g-emoji" alias="shopping" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f6cd.png">🛍️</g-emoji>
-> A mini ecommerce using the MELI API
+> Mini ecommerce using the MELI API
 
 I made a FrontEnd and a BackEnd that interacts with an external API.
 
