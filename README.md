@@ -1,14 +1,14 @@
-# MINI-Merchant
-> Un mini ecommerce usando la api de ML
+# MINI-Merchant <g-emoji class="g-emoji" alias="shopping" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f6cd.png">🛍️</g-emoji>
+> A mini ecommerce using the MELI API
 
-Hago un Front-End y un Back-End que interactua con una API externa.
+I made a FrontEnd and a BackEnd that interacts with an external API.
 
 ## Back-End
 
-- Se uso el siguiente endpoint de Mercado Libre `https://api.mercadolibre.com/sites/MLA/search?q={query}`.
-- Hago una cache para no repetir llamadas.
+- The following Mercado Libre endpoint was used `https://api.mercadolibre.com/sites/MLA/search?q={query}`.
+- Made a cache so i don't have to repeat calls
 
-> Podemos ver la documentación completa del endpoint en [este link](https://api.mercadolibre.com/sites/MLA/search?q=iphone).
+> We can see the complete documentation of the endpoint in [this link](https://api.mercadolibre.com/sites/MLA/search?q=iphone).
 
 ### Endpoints
 #### Swagger:
@@ -23,23 +23,23 @@ Hago un Front-End y un Back-End que interactua con una API externa.
 ## Front-End
 > url: `http://localhost:3000/`
 
-- Dispara request a la API(BACK-END) por medio de un formulario **controlado**.
-- Permite buscar producto.
-- Muestra un catalogo de lo buscado con sus atributos.
-- Filtrar por mayor precio, menor precio, nuevos y usados.
-- Limpiar el filtrado.
-- Paginado.
+- Trigger a request to the API(BackEnd) through a **controlled** form.
+- Lets you search for product.
+- Shows a catalog of the searched product with their respective attributes.
+- Allows you to filter by higher price, lower, price, new and used.
+- Allows you to clean the search filtering.
+- Has pagination.
 
 ![Alt Text](minimerchant.gif)
 
-## Lenguaje
+### Programming Language <g-emoji class="g-emoji" alias="tongue" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f445.png">👅</g-emoji>
 - JavaScript
-## Tecnologias
-### BackEnd:
+### Technologies <g-emoji class="g-emoji" alias="toolbox" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f9f0.png">🧰</g-emoji>
+#### BackEnd:
 - NodeJS
 - Express
 - Swagger
-### FrontEnd:
+#### FrontEnd:
 - React
 - React-Router
 - Redux
@@ -47,7 +47,7 @@ Hago un Front-End y un Back-End que interactua con una API externa.
 - Material-ui
 - Fontawesome
 
-## Instrucciones
-- npm install (en api y client)
-- npm run swagger-autogen en api y npm start en client
-- entrar a sus respectivas urls
+# Instructions <g-emoji class="g-emoji" alias="clipboard" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png">📋</g-emoji>
+- npm install (in api and client folder)
+- npm run swagger-autogen in api and npm start in client folder
+- check their respective urls
