@@ -3,14 +3,14 @@
 
 I made a FrontEnd and a BackEnd that interacts with an external API.
 
-## Back-End
+## Back-End <g-emoji class="g-emoji" alias="back" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f519.png">🔙</g-emoji>
 
 - The following Mercado Libre endpoint was used `https://api.mercadolibre.com/sites/MLA/search?q={query}`.
 - Made a cache so i don't have to repeat calls
 
 > We can see the complete documentation of the endpoint in [this link](https://api.mercadolibre.com/sites/MLA/search?q=iphone).
 
-### Endpoints
+### Endpoints <g-emoji class="g-emoji" alias="pushpin" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cc.png">📌</g-emoji>
 #### Swagger:
 > url: `http://localhost:3001/doc/`
 
@@ -20,7 +20,7 @@ I made a FrontEnd and a BackEnd that interacts with an external API.
 
 ![alt text](postman.PNG)
 
-## Front-End
+## Front-End <g-emoji class="g-emoji" alias="soon" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f51c.png">🔜</g-emoji>
 > url: `http://localhost:3000/`
 
 - Trigger a request to the API(BackEnd) through a **controlled** form.
