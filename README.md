@@ -43,6 +43,7 @@ I made a FrontEnd and a BackEnd that interacts with an external API.
 - React
 - React-Router
 - Redux
+- Axios
 - Bootstrap
 - Material-ui
 - Fontawesome
