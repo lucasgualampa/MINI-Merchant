@@ -26,7 +26,7 @@ I made a FrontEnd and a BackEnd that interacts with an external API.
 - Trigger a request to the API(BackEnd) through a **controlled** form.
 - Lets you search for product.
 - Shows a catalog of the searched product with their respective attributes.
-- Allows you to filter by higher price, lower, price, new and used.
+- Allows you to filter by higher price, lower price, new and used.
 - Allows you to clean the search filtering.
 - Has pagination.
 
