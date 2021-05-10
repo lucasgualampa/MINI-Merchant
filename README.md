@@ -39,6 +39,7 @@ I made a FrontEnd and a BackEnd that interacts with an external API.
 - NodeJS
 - Express
 - Swagger
+- Postman
 #### FrontEnd:
 - React
 - React-Router
